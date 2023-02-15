@@ -22,3 +22,19 @@ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example<br
 sudo nano /etc/nginx/sites-available/example<br/>
 sudo ln -s /etc/nginx/sites-available/example /etc/nginx/sites-enabled/<br/>
 sudo systemctl restart nginx<br/>
+
+
+-------------------------------------------------------------------
+Start invoice number from 1 automatically when year is changed.
+------------------------------------------------------------------
+
+$currentYear = date("Y");<br/>
+//get date and invoice number from last invoice<br/>
+$invoiceNo = 20;<br/>
+$invoiceYr = '2024';<br/>
+if($currentYear == $invoiceYr){<br/>
+$invoice = $invoiceNo+1;<br/>
+}else{<br/>
+$invoice = 1;<br/>
+}<br/>
+echo $invoice;<br/>
